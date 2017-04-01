@@ -1,0 +1,32 @@
+.full-body header{
+	text-align:center;
+}
+
+header .searchBoxArtist{
+	display:none;
+}
+
+.ButtonLupa{
+	display:block;
+}
+
+@media only screen and (min-width: 768px) {
+
+	header .inputArtist{
+		width:40%;
+		margin-top:0;
+		position:absolute;
+		right:0;
+		top:30px;
+	}
+
+	.ButtonLupa{
+		display:none;
+	}
+
+	header .searchBoxArtist{
+		margin-top:0;
+		display:block;
+	}
+
+}

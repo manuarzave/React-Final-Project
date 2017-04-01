@@ -1,0 +1,26 @@
+.tracklist-box table{
+	width:100%;
+	border:1px solid white;
+	border-radius:5px;
+	margin-top:30px;
+}
+
+.tracklist-box td{
+	padding:5px;
+	padding-left:20px;
+}
+.tracklist-box tr{
+	background-color:#222;
+}
+.tracklist-box tr:nth-child(odd){
+	background-color:#111;
+}
+
+.tracklist-box th{
+	background-color:#515151;
+	padding:10px;
+}
+
+.tracklist-box td p:hover{
+	cursor:pointer;
+}

@@ -1,0 +1,44 @@
+
+.band-image{
+	display:inline;
+	margin-right:50px;
+	margin-bottom:30px;
+	max-width:20%;
+}
+
+.band-info{
+	display:inline-block;
+	vertical-align:top;
+	max-width:60%;
+}
+
+.band-info p{
+	font-size:18px;
+}
+
+
+@media screen and (max-width:768px){
+	.band-view{
+		text-align:center;
+	}
+	.band-image{
+		max-width:80%;
+		margin:0;
+	}
+	.band-header p{
+		margin-bottom:15px;
+	}
+	.artistbox{
+		text-align: center;
+	}
+	.artistbox img{
+		margin-right:0 !important;
+	}
+	.boxinfo {
+		display: block !important;
+		max-width: 100% !important;
+		vertical-align: top;
+		line-height: 32px;
+		margin-top: 5px;
+	}
+}

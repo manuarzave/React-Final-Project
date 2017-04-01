@@ -1,0 +1,29 @@
+.artistbox{
+	border: 1px solid #ccc;
+	padding:10px;
+	padding-bottom:5px;
+	box-sizing:border-box;
+	margin-top:30px;
+	min-height:150px;
+	min-height: 175px;
+}
+
+.artistbox img{
+	display:inline-block;
+	max-width:150px;
+	margin-right:25px;
+
+}
+
+@media screen and (max-width:768px){
+	.artistbox{
+		text-align: center;
+	}
+	.boxinfo {
+		display: inline-block;
+		max-width: 100%;
+		vertical-align: top;
+		line-height: 32px;
+		margin-top: 5px;
+	}
+}
