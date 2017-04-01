@@ -15,8 +15,8 @@ class HomeView extends Component {
 			<SearchForm/>
 			</article>
 			</div>
-			);
-	}
+		);
+	};
+};
 
-}
 export default HomeView;

@@ -14,7 +14,7 @@ class ArtistsView extends Component {
 			<hr/>
 			<RenderBox/>
 			</article>
-			);
+		);
 	};
 };
 

@@ -13,8 +13,8 @@ class SearchHeader extends Component {
             <a href="/"><img src={logo} className="main-view__logo" alt="logo" /></a>
             <SearchForm/>
             </header>
-            );
-    }
-}
+        );
+    };
+};
 
 export default SearchHeader;

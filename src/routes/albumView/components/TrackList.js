@@ -20,29 +20,29 @@ componentWillMount() {
     var localid = localStorage.getItem( 'albumid' );
     this.getInputInfo(localid);
 };
+
 handleSubmit(event) {
     event.preventDefault();
-}
+};
 
 handleClick(event){
     var sounds = document.getElementsByTagName('audio');
     for(var i=0; i<sounds.length; i++){
         sounds[i].pause();
-    }
-    console.log("clicked");
+    };
     var audio = document.getElementById(event);
     audio.play();
-}
+};
+
 getData(){
     return this.state;
-} 
+};
+
 getInputInfo(name){
     const main = this;
     let query = null;
     fetch(`https://api.spotify.com/v1/albums/${name}`)
-    .then( function(response) {
-      return response.json();
-  })
+    .then( function(response){ return response.json(); })
     .then( function(response) {
         let bandname = undefined;
         let albumname = undefined;
@@ -50,20 +50,16 @@ getInputInfo(name){
         let albumyear = undefined;
         let tracklist = [];
         let previewurls = [];
-
         for (var i = 0; i < response.tracks.items.length; i++) {
             var namecounter = response.tracks.items[i].name;
             var urlcounter = response.tracks.items[i].preview_url;
             tracklist.push(namecounter);
             previewurls.push(urlcounter);
-        }
-
+        };
         bandname = response.artists[0].name;
         albumname = response.name;
         albumcover = response.images[0].url;
         albumyear = response.release_date;
-
-
         main.setState({
             bandname: bandname,
             albumname: albumname,
@@ -71,13 +67,9 @@ getInputInfo(name){
             albumyear: albumyear,
             tracklist: tracklist,
             previewurls: previewurls
-        })
+        });
     });
-
 };
-
-
-
 
 render() {
     const { 
@@ -89,17 +81,14 @@ render() {
         previewurls
     } = this.state;
     var self = this;
-
     var items = this.state.tracklist.map(function(item, key){
         return(
-         <tr>
-         <td><p onClick={self.handleClick.bind(this, tracklist[key])}>{tracklist[key]}</p></td>
-         <audio id={tracklist[key]} src={previewurls[key]} ></audio>
-         </tr>
-         )
+            <tr>
+            <td><p onClick={self.handleClick.bind(this, tracklist[key])}>{tracklist[key]}</p></td>
+            <audio id={tracklist[key]} src={previewurls[key]} ></audio>
+            </tr>
+         );
     });
-    console.log("NOMBRES " + this.state.tracklist);
-
     return (
         <div>
         <div className="band-view">
@@ -122,8 +111,9 @@ render() {
         </div>
         </div>
         </div>
-        );
-}
-}
+    );
+};
+
+};
 
 export default TrackList;

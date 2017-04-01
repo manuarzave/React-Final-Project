@@ -13,7 +13,7 @@ class HomeHeader extends Component {
 			<a href="/"><img src={logo} className="main-view__logo" alt="logo" /></a>
 			</header>
 		);
-	}
-}
+	};
+};
 
 export default HomeHeader;

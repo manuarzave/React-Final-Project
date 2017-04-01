@@ -29,7 +29,7 @@ class SearchForm extends React.Component {
         main.setState({
             infoStatus: 'loading'
         });
-    }
+    };
 
   render() {
     const { 
@@ -43,7 +43,8 @@ class SearchForm extends React.Component {
         </form>
         </div>
     );
-  }
-}
+  };
+
+};
 
 export default SearchForm;

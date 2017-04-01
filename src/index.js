@@ -7,7 +7,7 @@ import 'whatwg-fetch';
 
 ReactDOM.render(
 	<BrowserRouter>
-	{getRoutes()}
+		{getRoutes()}
 	</BrowserRouter>,
 	document.getElementById('root')
 );

@@ -7,9 +7,11 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
 *{
 	box-sizing:border-box;
 }
+
 body {
 	margin: 0;
 	padding: 0;
@@ -26,8 +28,6 @@ li {
 	display: inline-block;
 	margin: 0 10px;
 }
-
-/* END reset */ 
 
 /* global styles */
 
@@ -64,8 +64,6 @@ h1{
 h4{
 	font-size:22px;
 }
-
-/* END global styles */
 
 /* Layout
 ========================================================================== */
@@ -113,11 +111,15 @@ html {
 /* Clearfix by Nicolas Gallagher
 ========================================================================== */
 
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .clearfix:after {
 	content: " ";
 	display: table;
 }
 
-.clearfix:after { clear: both; }
-.clearfix { *zoom: 1; }
+.clearfix:after { 
+	clear: both; 
+}
+
+.clearfix {
+	*zoom: 1; 
+}

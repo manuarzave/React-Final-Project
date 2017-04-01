@@ -33,21 +33,15 @@ class SearchForm extends React.Component {
 
   getInputInfo(name){
     const main = this;
-    main.setState({
-      infoStatus: 'loading'
-    });
+    main.setState( {infoStatus: 'loading' });
     fetch(`https://api.spotify.com/v1/search?type=artist&q=artist:${name}`)
-    .then( function(response) {
-      console.log("respondió BandView");
-      return response.json();
-    })
-    .then( function(response) {
+    .then( function(response){ return response.json(); })
+    .then( function(response){
       let bandlist = [];
       let logoslist = [];
       let idslist = [];
       for (var i = 0; i < response.artists.items.length; i++) {
         var counter = response.artists.items[i].name;
-        console.log("la id es " + counter);
         bandlist.push(counter);
       }
       for (var j = 0; j < response.artists.items.length; j++) {
@@ -58,23 +52,18 @@ class SearchForm extends React.Component {
           imgs = "http://placehold.it/150x150";
           logoslist.push(imgs);
         }
-      }
+      };
       for (var k = 0; k < response.artists.items.length; k++) {
         var addid = response.artists.items[k].id;
-        console.log("la id es " + response.artists.items[k].id);
         idslist.push(addid);
-      }
+      };
       main.setState({
         name: bandlist,
         logos: logoslist,
         ids: idslist
       });
     })
-    .catch( function(response) {
-     main.setState({
-      infoStatus: 'error'
-    });
-   })
+    .catch( function(response){ main.setState({ infoStatus: 'error'}); })
   };
 
   render() {
@@ -87,12 +76,12 @@ class SearchForm extends React.Component {
     var items = this.state.name.map(function(item, key){
       return (
         <div className="column half">
-          <div className="artistbox">
-            <img src={logos[key]}/>
-            <div className="boxinfo">
-              <a href="/bandview" id={ids[key]} onClick={self.handleClick.bind(this, ids[key])}><h4>{name[key]}</h4></a>
-            </div> 
-          </div>
+        <div className="artistbox">
+          <img src={logos[key]}/>
+          <div className="boxinfo">
+            <a href="/bandview" id={ids[key]} onClick={self.handleClick.bind(this, ids[key])}><h4>{name[key]}</h4></a>
+          </div> 
+        </div>
         </div>
       );
     });
@@ -100,9 +89,9 @@ class SearchForm extends React.Component {
       <div>
       {items}
       </div>
-    )
-  }
+    );
+  };
 
-}
+};
 
 export default SearchForm;
